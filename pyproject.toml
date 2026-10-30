@@ -7,7 +7,13 @@ authors = [
     { name = "akshayajayan8", email = "akshayajayan43@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "aiosqlite>=0.22.1",
+    "fastapi>=0.162.0",
+    "loadenv>=0.1.1",
+    "sqlalchemy[asyncio]>=2.1.6",
+    "uvicorn>=0.54.0",
+]
 
 [project.scripts]
 test-project = "test_project:main"

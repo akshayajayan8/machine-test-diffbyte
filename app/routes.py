@@ -16,16 +16,16 @@ async def create_user(
     db:AsyncSession = Depends(get_db)
 ):
     user = User(
-        name = UserCreate.name,
-        email = UserCreate.email,
-        message = UserCreate.message
+        name = body.name,
+        email = body.email,
+        message = body.message
     )
 
-    await db.add(user)
+    db.add(user)
     await db.commit()
     return JSONResponse(
         status_code=201,
         content={
-            "id":user.id,
+            "id":str(user.id),
         }
     )

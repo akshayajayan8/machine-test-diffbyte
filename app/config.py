@@ -1,6 +1,8 @@
-import loadenv, os
+import os
+from dotenv import load_dotenv
 
-# loadenv()
+
+load_dotenv()
 
 
 class Settings():
